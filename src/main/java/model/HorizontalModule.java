@@ -34,7 +34,7 @@ public class HorizontalModule {
             }
         } else if (location.equalsIgnoreCase("bottom")) {
             for (int i = 0; i < inputStrng.length(); i++) {
-                wholeSegment += charMiddlePartInterpreter(inputStrng.charAt(i), util);
+                wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util);
             }
         }
 
