@@ -10,5 +10,12 @@ package Model;
  * @author james
  */
 public class VerticalModule {
-    
+
+    private final int size;
+    private final int input;
+
+    public VerticalModule(int size, int input) {
+        this.size = size;
+        this.input = input;
+    }
 }
