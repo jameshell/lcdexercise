@@ -3,29 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.cleversystems.lcdrefactor.model;
+package Model;
 
 /**
  *
  * @author james
  */
-public class Excepcion extends Exception{
-    public Excepcion() {
+public class LCDException extends Exception{
+    public LCDException() {
 
     }
-    public Excepcion( String message ) {
+    public LCDException( String message ) {
         super( message );
     }
 
-    public Excepcion( Throwable cause ) {
+    public LCDException( Throwable cause ) {
         super( cause );
     }
 
-    public Excepcion( String message, Throwable cause ) {
+    public LCDException( String message, Throwable cause ) {
         super( message, cause );
     }
 
-    public Excepcion( String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace ) {
+    public LCDException( String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace ) {
         super( message, cause, enableSuppression, writableStackTrace );
     }
 }
