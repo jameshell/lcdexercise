@@ -5,4 +5,4 @@ This repo holds the test done by PSL.
 
 | Circle CI  | Travis CI | Codacy | Code Coverage |
 | :---: | :---: | :---: | :---: |
-| Content Cell  | Content Cell  | Content Cell | Content Cell |
+| [![CircleCI](https://img.shields.io/circleci/project/github/jameshell/lcdexercise.svg)](https://circleci.com/gh/jameshell/lcdexercise)  | Content Cell  | Content Cell | Content Cell |
