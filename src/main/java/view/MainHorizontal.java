@@ -3,28 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view;
 
 /**
  *
- * @author Jaime Alonso
+ * @author james
  */
-public class VerticalModule {
-
-    private final int size;
-    private final int input;
-
-    public VerticalModule(int size, int input) {
-        this.size = size;
-        this.input = input;
+public class MainHorizontal {
+    public static void main(String[] args) {
+        System.out.println(lineMaker(3,3));
     }
-
+    
     /*Makes the String for the lines
     Case 1.) Right line 
          2.) Left line 
          3.) Double line
     */
-    private String lineMaker(int size, int operation) {
+    public static String lineMaker(int size, int operation) {
         String line = "";
         switch (operation) {
             case 1:
@@ -41,7 +36,7 @@ public class VerticalModule {
     }
     
     //To repeat Strings
-    private String letterRepeater(String letter, int numRepetitions) {
+    public static String letterRepeater(String letter, int numRepetitions) {
         String pattern = "";
         for (int i = 0; i < numRepetitions; i++) {
             pattern += letter;
