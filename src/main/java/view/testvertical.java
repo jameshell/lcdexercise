@@ -26,10 +26,6 @@ public class testvertical {
         printVerticalBottomPart(util, size, input);
         printHorizontalBottomPart(util, size, input);
 
-//         System.out.println("COLUMNAS="+columnas);
-//         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
-//         System.out.println("SUBSTRING 2 ="+lineaCompleta.substring(columnas+1,columnas+columnas+2));
-//         System.out.println("SUBSTRING 3 ="+lineaCompleta.substring(columnas+columnas+2,columnas+columnas+columnas+3));
     }
 
     //Print Upper part
@@ -43,13 +39,7 @@ public class testvertical {
         int colcont = 1;
         int columnas = util.columnSize(size) - 1;
         int divisions = (lineaCompleta.length()/size)-1;
-        
-//       System.out.println("Full String--->"+lineaCompleta);
-//        System.out.println("Length--->"+lineaCompleta.length());
-//        System.out.println("Cantidad Numeros--->"+cantidadInput.length());
-//        System.out.println(lineaCompleta.substring(0,24));
-//         System.out.println(lineaCompleta.substring(24,48));
-//         System.out.println("??????????????????????????????");
+
           while(contador<lineaCompleta.length()){
               if(end+divisions+colcont>lineaCompleta.length()){
                   System.out.println(lineaCompleta.substring(inicio));
