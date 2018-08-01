@@ -123,7 +123,7 @@ public class VerticalModule {
          3.) Double line -> |__|
      */
     public static String lineMaker(int size, int operation) {
-        String line = "";
+        String line ="";
         switch (operation) {
             case 1:
                 line = line + "|" + letterRepeater(" ", size - 1);
