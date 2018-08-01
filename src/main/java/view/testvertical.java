@@ -17,8 +17,8 @@ public class testvertical {
 
     public static void main(String[] args) {
         Utility util = new Utility();
-        int size = 4;
-        int input = 66;
+        int size = 2;
+        int input = 77;
 
         printHorizontalUpperPart(util, size, input);
         printVerticalUpperPart(util, size, input);
@@ -36,18 +36,40 @@ public class testvertical {
     public static void printVerticalUpperPart(Utility util, int size, int input) {
         VerticalModule module = new VerticalModule(size, input);
         String lineaCompleta = module.segmentMaker(util, 1);
+        String cantidadInput = Integer.toString(input);
         int end = 0;
         int contador = 0;
         int inicio = 0;
         int colcont = 1;
         int columnas = util.columnSize(size) - 1;
-        System.out.println("Full String--->"+lineaCompleta);
-        while (contador < size) {
-            end = end + columnas + colcont;
-            System.out.println(lineaCompleta.substring(inicio, end));
-            inicio = end;
-            contador++;
-        }
+        int divisions = (lineaCompleta.length()/size)-1;
+        
+//       System.out.println("Full String--->"+lineaCompleta);
+//        System.out.println("Length--->"+lineaCompleta.length());
+//        System.out.println("Cantidad Numeros--->"+cantidadInput.length());
+//        System.out.println(lineaCompleta.substring(0,24));
+//         System.out.println(lineaCompleta.substring(24,48));
+//         System.out.println("??????????????????????????????");
+          while(contador<lineaCompleta.length()){
+              if(end+divisions+colcont>lineaCompleta.length()){
+                  System.out.println(lineaCompleta.substring(inicio));
+                  break;
+              } else{
+                  end = end + divisions + colcont;
+              System.out.println(lineaCompleta.substring(inicio, end));
+              inicio = end;
+              contador++;
+              }
+              
+          }
+        
+//        while (contador < size) {
+//            end = end + columnas + colcont;
+//            System.out.println(lineaCompleta.substring(inicio, end));
+//            inicio = end;
+//            contador++;
+//        }
+        
     }
 
     public static void printVerticalBottomPart(Utility util, int size, int input) {
@@ -58,12 +80,20 @@ public class testvertical {
         int inicio = 0;
         int colcont = 1;
         int columnas = util.columnSize(size) - 1;
-        while (contador < size) {
-            end = end + columnas + colcont;
-            System.out.println(lineaCompleta.substring(inicio, end));
-            inicio = end;
-            contador++;
-        }
+        int divisions = (lineaCompleta.length()/size)-1;
+        
+        while(contador<lineaCompleta.length()){
+              if(end+divisions+colcont>lineaCompleta.length()){
+                  System.out.println(lineaCompleta.substring(inicio));
+                  break;
+              } else{
+                  end = end + divisions + colcont;
+              System.out.println(lineaCompleta.substring(inicio, end));
+              inicio = end;
+              contador++;
+              }
+              
+          }
     }
 
     public static void printHorizontalUpperPart(Utility util, int size, int input) {
