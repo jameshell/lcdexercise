@@ -44,8 +44,6 @@ public class VerticalModule {
         String inputStrng = Integer.toString(input);
         int length = inputStrng.length();
         String wholeSegment = "";
-        int rowSize = util.rowSize(input);
-
         switch (operation) {
             case 1:
                 for (int j = 0; j < size; j++) {

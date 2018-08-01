@@ -32,12 +32,10 @@ public class testvertical {
     public static void printVerticalUpperPart(Utility util, int size, int input) {
         VerticalModule module = new VerticalModule(size, input);
         String lineaCompleta = module.segmentMaker(util, 1);
-        String cantidadInput = Integer.toString(input);
         int end = 0;
         int contador = 0;
         int inicio = 0;
         int colcont = 1;
-        int columnas = util.columnSize(size) - 1;
         int divisions = (lineaCompleta.length()/size)-1;
 
           while(contador<lineaCompleta.length()){
