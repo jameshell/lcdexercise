@@ -100,7 +100,7 @@ public class HorizontalModule {
     private String lineMaker(int size) {
         String line = "";
         for (int i = 0; i < size; i++) {
-            line += "-";
+            line += "_";
         }
         return line+" ";
     }

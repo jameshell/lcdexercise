@@ -18,7 +18,7 @@ public class testvertical {
     public static void main(String[] args) {
         Utility util = new Utility();
         int size = 2;
-        int input = 77;
+        int input = 7768;
 
         printHorizontalUpperPart(util, size, input);
         printVerticalUpperPart(util, size, input);

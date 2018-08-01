@@ -129,10 +129,10 @@ public class VerticalModule {
                 line = line + "|" + letterRepeater(" ", size - 1);
                 break;
             case 2:
-                line = line + letterRepeater(" ", size - 1) + "|";
+                line = line + letterRepeater(" ", size - 1) + " |";
                 break;
             case 3:
-                line = line + "|" + letterRepeater(" ", size - 2) + "|";
+                line = line + "|" + letterRepeater(" ", size - 2) + " |";
                 break;
         }
         return line;
