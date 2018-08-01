@@ -9,17 +9,53 @@ import model.Utility;
 
 /**
  *
- * @author james
+ * @author Jaime Alonso
  */
 public class MainVertical {
+
     public static void main(String[] args) {
         Utility util = new Utility();
-        System.out.println(segmentMaker(util,1,2,12345));
-        //charUpperPartInterpreter('6',util, 3)); WORKING
+        //System.out.println(segmentMaker(util,1,2,2));
+        int size = 2;
+        int input =44;
+        //1- Upper   2- Bottom
+        String lineaCompleta=segmentMaker(util, 1, size, input);
+        
+        
+        
+        System.out.println("LINEA COMPLETA -> "+lineaCompleta);
+  
+        int largo = Integer.toString(input).length();
+        
+        
+        System.out.println("LARGO INPUT -> "+largo);
+        int contador=0;
+        int inicio=0;
+        int columnas = util.columnSize(size)-1;
+        System.out.println("COLUMNAS="+columnas);
+         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
+         System.out.println("SUBSTRING 2 ="+lineaCompleta.substring(columnas+1));
+//        while(contador<size){
+//            System.out.println(lineaCompleta.substring(inicio, columnas));
+//            inicio = columnas+1;
+//            columnas= columnas + columnas;
+//            contador++;
+//        }
+        
+        
+        //System.out.println(segmentMaker(util, 1, size, input));
+        //System.out.println(segmentMaker(util, 2, size, input));
+
+        /*
+        char x='0';
+        int size = 4;
+        System.out.println(charUpperPartInterpreter(x,util, size));
+        System.out.println(charBottomPartInterpreter(x, util, size));
+         */
         //lineMaker(5,3) WORKING;
         //letterRepeater("2",3); WORKING
     }
-    
+
     /*
     Segment maker cases:
     1.) for Upper part creation
@@ -30,29 +66,31 @@ public class MainVertical {
         int length = inputStrng.length();
         String wholeSegment = "";
         int rowSize = util.rowSize(input);
-        int verticalSegmentSize = (rowSize - 3) / 2;
 
         switch (operation) {
             case 1:
-               // for (int j = 0; j < verticalSegmentSize; j++) {
+                for (int j = 0; j < size; j++) {
                     for (int i = 0; i < length; i++) {
                         wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util, size);
                     }
-                //}
+                }
+                break;
 
             case 2:
-                for (int j = 0; j < verticalSegmentSize; j++) {
+                for (int j = 0; j < size; j++) {
                     for (int i = 0; i < length; i++) {
                         wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util, size);
                     }
                 }
+                break;
         }
 
         return wholeSegment;
     }
 
     /*
-    Decides what case of the linemaker method is needed for the Upper part.
+    Decides what case of the lineMaker() method is needed for the Upper part.
+    Only for one Number in the size wanted!
      */
     public static String charUpperPartInterpreter(char charInput, Utility util, int size) {
         String result;
@@ -129,5 +167,5 @@ public class MainVertical {
         }
         return pattern;
     }
-   
+
 }
