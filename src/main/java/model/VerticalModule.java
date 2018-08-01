@@ -11,18 +11,99 @@ package model;
  */
 public class VerticalModule {
 
-    private final int size;
-    private final int input;
+    private int size;
+    private int input;
 
     public VerticalModule(int size, int input) {
         this.size = size;
         this.input = input;
     }
 
-    /*Makes the String for the lines
-    Case 1.) Right line 
-         2.) Left line 
-         3.) Double line
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getInput() {
+        return input;
+    }
+
+    public void setInput(int input) {
+        this.input = input;
+    }
+    
+    /*
+    Segment maker cases:
+    1.) for Upper part creation
+    2.) for Bottom part creation
+    */
+    private String segmentMaker(Utility util, int operation){
+        String inputStrng = Integer.toString(input);
+        String wholeSegment = "";
+        int rowSize = util.rowSize(input);
+        
+        switch(operation){
+            case 1:
+                for(int i=0;i<0;i++){
+                    wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util);
+                }
+            case 2:
+            case 3:
+        }
+        
+        return wholeSegment;
+    }
+    
+    private String charUpperPartInterpreter(char charInput, Utility util){
+        String result;
+        int numColumns = util.columnSize(size);
+        switch (charInput) {
+            case '2':
+            case '3':
+            case '7':
+                result = lineMaker(numColumns,2);
+                break;
+            case '1':
+            case '5':
+            case '6':
+                result = lineMaker(numColumns,1);
+                break;
+            default:
+                result = lineMaker(numColumns,3);
+                break;
+        }
+        return result;
+    }
+    
+    private String charBottomPartInterpreter(char charInput, Utility util){
+        String result;
+        int numColumns = util.columnSize(size);
+        switch (charInput) {
+            case '3':
+            case '4':
+            case '7':
+            case '9':
+            case '5':
+                result = lineMaker(numColumns,2);
+                break;
+            case '1':
+            case '2':
+                result = lineMaker(numColumns,1);
+                break;
+            default:
+                result = lineMaker(numColumns,3);
+                break;
+        }
+        return result;
+    }
+    
+    /*Makes each vertical line 
+    Case 1.) Left line   -> |__
+         2.) Right line  ->  __|
+         3.) Double line -> |__|
     */
     private String lineMaker(int size, int operation) {
         String line = "";
