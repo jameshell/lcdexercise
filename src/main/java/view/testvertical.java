@@ -11,7 +11,7 @@ import model.Utility;
  *
  * @author Jaime Alonso
  */
-public class MainVertical {
+public class testvertical {
 
     public static void main(String[] args) {
         Utility util = new Utility();
