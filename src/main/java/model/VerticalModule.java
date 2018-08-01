@@ -40,34 +40,36 @@ public class VerticalModule {
     1.) for Upper part creation
     2.) for Bottom part creation
      */
-    private String segmentMaker(Utility util, int operation) {
+    public String segmentMaker(Utility util, int operation) {
         String inputStrng = Integer.toString(input);
         int length = inputStrng.length();
         String wholeSegment = "";
         int rowSize = util.rowSize(input);
-        int verticalSegmentSize = (rowSize - 3) / 2;
 
         switch (operation) {
             case 1:
-                for (int j = 0; j < verticalSegmentSize; j++) {
+                for (int j = 0; j < size; j++) {
                     for (int i = 0; i < length; i++) {
                         wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util);
                     }
                 }
+                break;
 
             case 2:
-                for (int j = 0; j < verticalSegmentSize; j++) {
+                for (int j = 0; j < size; j++) {
                     for (int i = 0; i < length; i++) {
                         wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util);
                     }
                 }
+                break;
         }
 
         return wholeSegment;
     }
 
     /*
-    Decides what case of the linemaker method is needed for the Upper part.
+    Decides what case of the lineMaker() method is needed for the Upper part.
+    Only for one Number in the size wanted!
      */
     private String charUpperPartInterpreter(char charInput, Utility util) {
         String result;
@@ -120,7 +122,7 @@ public class VerticalModule {
          2.) Right line  ->  __|
          3.) Double line -> |__|
      */
-    private String lineMaker(int size, int operation) {
+    public static String lineMaker(int size, int operation) {
         String line = "";
         switch (operation) {
             case 1:
@@ -137,7 +139,7 @@ public class VerticalModule {
     }
 
     //To repeat Strings
-    private String letterRepeater(String letter, int numRepetitions) {
+    public static String letterRepeater(String letter, int numRepetitions) {
         String pattern = "";
         for (int i = 0; i < numRepetitions; i++) {
             pattern += letter;
