@@ -36,20 +36,22 @@ public class HorizontalModule {
     }
 
     //Builds the whole horizontal top/mid/bot of the LCD 
-    public String segmentMaker(Utility util, String location) {
+    public String segmentMaker(Utility util, int location) {
         String inputStrng = Integer.toString(input);
         int length = inputStrng.length();
         String wholeSegment = "";
-
-        if (location.equalsIgnoreCase("upper")) {
+            //TOP
+        if (location == 1) {
             for (int i = 0; i < length; i++) {
                 wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util);
             }
-        } else if (location.equalsIgnoreCase("middle")) {
+            //MIDDLE
+        } else if (location == 2) {
             for (int i = 0; i < length; i++) {
                 wholeSegment += charMiddlePartInterpreter(inputStrng.charAt(i), util);
             }
-        } else if (location.equalsIgnoreCase("bottom")) {
+            //BOTTOM
+        } else if (location == 3) {
             for (int i = 0; i < length; i++) {
                 wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util);
             }
