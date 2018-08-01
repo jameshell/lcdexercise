@@ -37,12 +37,11 @@ public class testvertical {
 //         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
 //         System.out.println("SUBSTRING 2 ="+lineaCompleta.substring(columnas+1,columnas+columnas+2));
 //         System.out.println("SUBSTRING 3 ="+lineaCompleta.substring(columnas+columnas+2,columnas+columnas+columnas+3));
-         
+         int end=0;
          while(contador<size){
-             System.out.println(lineaCompleta.substring(inicio, columnas+colcont)); 
-             inicio = inicio + columnas + 1;
-             columnas = columnas + columnas;
-             colcont++;
+             end =  end+columnas+colcont;
+             System.out.println(lineaCompleta.substring(inicio, end));
+             inicio = end;
              contador++;
          }
          
