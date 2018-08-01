@@ -5,42 +5,111 @@
  */
 package view;
 
+import model.Utility;
+
 /**
  *
- * @author james
+ * @author Jaime Alonso
  */
 public class MainHorizontal {
-    public static void main(String[] args) {
-        System.out.println(lineMaker(3,3));
+    public static void main(String args[]){
+        Utility util = new Utility();
+         System.out.println(upperPart(util,67890,3));
     }
     
-    /*Makes the String for the lines
-    Case 1.) Right line 
-         2.) Left line 
-         3.) Double line
-    */
-    public static String lineMaker(int size, int operation) {
+    
+
+    public static String upperPart(Utility util, int input, int size) {
+        String inputStrng = Integer.toString(input);
+        String wholeUpperPart="";
+        
+        for(int i=0; i<inputStrng.length();i++){
+        wholeUpperPart+=charUpperPartInterpreter(inputStrng.charAt(i), util, size)+" ";    
+        }
+        return wholeUpperPart;
+    }
+    
+
+    public static String charUpperPartInterpreter(char charInput, Utility util, int size) {
+        String result;
+        int numColumns = util.columnSize(size);
+        if (charInput != '1' && charInput != '4') {
+            result = lineMaker(numColumns);
+        } else {
+            result = spaceMaker(numColumns);
+        }
+        return result;
+    }
+    
+
+    public static String lineMaker(int size) {
         String line = "";
-        switch (operation) {
-            case 1:
-                    line = line+"|"+letterRepeater(" ",size-1);
-                    break;
-            case 2: 
-                    line = line+letterRepeater(" ",size-1)+"|";
-                    break;
-            case 3: 
-                    line = line+"|"+letterRepeater(" ",size-2)+"|";
-                    break;
+        for (int i = 0; i < size; i++) {
+             line += "-";
         }
         return line;
     }
     
-    //To repeat Strings
-    public static String letterRepeater(String letter, int numRepetitions) {
-        String pattern = "";
-        for (int i = 0; i < numRepetitions; i++) {
-            pattern += letter;
+
+    public static String spaceMaker(int size) {
+        String space = "";
+        for (int i = 0; i < size; i++) {
+             space += " ";
         }
-        return pattern;
+        return space;
     }
+    
+    /*
+    public class Main {
+    public static void main(String args[]){
+        Utility util = new Utility();
+         System.out.println(upperPart(util,12345,2));
+    }
+    
+    
+
+    public static String upperPart(Utility util, int input, int size) {
+        String inputStrng = Integer.toString(input);
+        String wholeUpperPart="";
+        
+        for(int i=0; i<inputStrng.length();i++){
+        wholeUpperPart+=charUpperPartInterpreter(inputStrng.charAt(i), util, size)+" ";    
+        }
+        return wholeUpperPart;
+    }
+    
+
+    public static String charUpperPartInterpreter(char charInput, Utility util, int size) {
+        String result;
+        int numColumns = util.columnSize(size);
+        if (charInput != '1' && charInput != '4') {
+            result = lineMaker(numColumns);
+        } else {
+            result = spaceMaker(numColumns);
+        }
+        return result;
+    }
+    
+
+    public static String lineMaker(int size) {
+        String line = "";
+        for (int i = 0; i < size; i++) {
+             line += "-";
+        }
+        return line;
+    }
+    
+
+    public static String spaceMaker(int size) {
+        String space = "";
+        for (int i = 0; i < size; i++) {
+             space += " ";
+        }
+        return space;
+    }
+    
+    
+}
+
+    */
 }

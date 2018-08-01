@@ -3,44 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view;
+
+import model.Utility;
 
 /**
  *
- * @author Jaime Alonso
+ * @author james
  */
-public class VerticalModule {
-
-    private int size;
-    private int input;
-
-    public VerticalModule(int size, int input) {
-        this.size = size;
-        this.input = input;
+public class MainVertical {
+    public static void main(String[] args) {
+        Utility util = new Utility();
+        System.out.println(segmentMaker(util,1,2,12345));
+        //charUpperPartInterpreter('6',util, 3)); WORKING
+        //lineMaker(5,3) WORKING;
+        //letterRepeater("2",3); WORKING
     }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getInput() {
-        return input;
-    }
-
-    public void setInput(int input) {
-        this.input = input;
-    }
-
+    
     /*
     Segment maker cases:
     1.) for Upper part creation
     2.) for Bottom part creation
      */
-    private String segmentMaker(Utility util, int operation) {
+    public static String segmentMaker(Utility util, int operation, int size, int input) {
         String inputStrng = Integer.toString(input);
         int length = inputStrng.length();
         String wholeSegment = "";
@@ -49,16 +34,16 @@ public class VerticalModule {
 
         switch (operation) {
             case 1:
-                for (int j = 0; j < verticalSegmentSize; j++) {
+               // for (int j = 0; j < verticalSegmentSize; j++) {
                     for (int i = 0; i < length; i++) {
-                        wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util);
+                        wholeSegment += charUpperPartInterpreter(inputStrng.charAt(i), util, size);
                     }
-                }
+                //}
 
             case 2:
                 for (int j = 0; j < verticalSegmentSize; j++) {
                     for (int i = 0; i < length; i++) {
-                        wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util);
+                        wholeSegment += charBottomPartInterpreter(inputStrng.charAt(i), util, size);
                     }
                 }
         }
@@ -69,7 +54,7 @@ public class VerticalModule {
     /*
     Decides what case of the linemaker method is needed for the Upper part.
      */
-    private String charUpperPartInterpreter(char charInput, Utility util) {
+    public static String charUpperPartInterpreter(char charInput, Utility util, int size) {
         String result;
         int numColumns = util.columnSize(size);
         switch (charInput) {
@@ -93,7 +78,7 @@ public class VerticalModule {
     /*
     Decides what case of the linemaker method is needed for the Bottom part.
      */
-    private String charBottomPartInterpreter(char charInput, Utility util) {
+    public static String charBottomPartInterpreter(char charInput, Utility util, int size) {
         String result;
         int numColumns = util.columnSize(size);
         switch (charInput) {
@@ -120,7 +105,7 @@ public class VerticalModule {
          2.) Right line  ->  __|
          3.) Double line -> |__|
      */
-    private String lineMaker(int size, int operation) {
+    public static String lineMaker(int size, int operation) {
         String line = "";
         switch (operation) {
             case 1:
@@ -137,11 +122,12 @@ public class VerticalModule {
     }
 
     //To repeat Strings
-    private String letterRepeater(String letter, int numRepetitions) {
+    public static String letterRepeater(String letter, int numRepetitions) {
         String pattern = "";
         for (int i = 0; i < numRepetitions; i++) {
             pattern += letter;
         }
         return pattern;
     }
+   
 }

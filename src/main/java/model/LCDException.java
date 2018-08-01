@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author james
+ * @author Jaime Alonso
  */
 public class LCDException extends Exception{
     public LCDException() {
