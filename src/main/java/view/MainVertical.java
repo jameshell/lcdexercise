@@ -16,8 +16,8 @@ public class MainVertical {
     public static void main(String[] args) {
         Utility util = new Utility();
         //System.out.println(segmentMaker(util,1,2,2));
-        int size = 2;
-        int input =44;
+        int size = 3;
+        int input =4;
         //1- Upper   2- Bottom
         String lineaCompleta=segmentMaker(util, 1, size, input);
         
@@ -32,9 +32,19 @@ public class MainVertical {
         int contador=0;
         int inicio=0;
         int columnas = util.columnSize(size)-1;
-        System.out.println("COLUMNAS="+columnas);
-         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
-         System.out.println("SUBSTRING 2 ="+lineaCompleta.substring(columnas+1));
+//         System.out.println("COLUMNAS="+columnas);
+//         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
+//         System.out.println("SUBSTRING 2 ="+lineaCompleta.substring(columnas+1,columnas+columnas+2));
+//         System.out.println("SUBSTRING 3 ="+lineaCompleta.substring(columnas+columnas+2,columnas+columnas+columnas+3));
+         
+         while(contador<size){
+             int end = columnas+1;
+             System.out.println(lineaCompleta.substring(inicio, end)); 
+             inicio = end;
+             columnas += columnas;
+             contador++;
+         }
+         
 //        while(contador<size){
 //            System.out.println(lineaCompleta.substring(inicio, columnas));
 //            inicio = columnas+1;
