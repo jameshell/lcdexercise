@@ -31,6 +31,7 @@ public class testvertical {
         System.out.println("LARGO INPUT -> "+largo);
         int contador=0;
         int inicio=0;
+        int colcont = 1;
         int columnas = util.columnSize(size)-1;
 //         System.out.println("COLUMNAS="+columnas);
 //         System.out.println("SUBSTRING 1 ="+lineaCompleta.substring(0,columnas+1));
@@ -38,10 +39,10 @@ public class testvertical {
 //         System.out.println("SUBSTRING 3 ="+lineaCompleta.substring(columnas+columnas+2,columnas+columnas+columnas+3));
          
          while(contador<size){
-             int end = columnas+1;
-             System.out.println(lineaCompleta.substring(inicio, end)); 
-             inicio = end;
-             columnas += columnas;
+             System.out.println(lineaCompleta.substring(inicio, columnas+colcont)); 
+             inicio = inicio + columnas + 1;
+             columnas = columnas + columnas;
+             colcont++;
              contador++;
          }
          
