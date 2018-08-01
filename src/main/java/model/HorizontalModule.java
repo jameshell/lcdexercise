@@ -102,7 +102,7 @@ public class HorizontalModule {
         for (int i = 0; i < size; i++) {
             line += "-";
         }
-        return line;
+        return line+" ";
     }
 
     //This method creates the spaces
@@ -111,7 +111,7 @@ public class HorizontalModule {
         for (int i = 0; i < size; i++) {
             space += " ";
         }
-        return space;
+        return space+" ";
     }
 
 }

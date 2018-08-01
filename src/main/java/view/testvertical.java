@@ -18,7 +18,7 @@ public class testvertical {
     public static void main(String[] args) {
         Utility util = new Utility();
         int size = 4;
-        int input = 4;
+        int input = 66;
 
         printHorizontalUpperPart(util, size, input);
         printVerticalUpperPart(util, size, input);
@@ -41,6 +41,7 @@ public class testvertical {
         int inicio = 0;
         int colcont = 1;
         int columnas = util.columnSize(size) - 1;
+        System.out.println("Full String--->"+lineaCompleta);
         while (contador < size) {
             end = end + columnas + colcont;
             System.out.println(lineaCompleta.substring(inicio, end));
