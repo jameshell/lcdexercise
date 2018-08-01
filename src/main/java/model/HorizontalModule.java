@@ -11,13 +11,31 @@ package model;
  */
 public class HorizontalModule {
 
-    private final int size;
-    private final int input;
+    private int size;
+    private int input;
 
     public HorizontalModule(int size, int input) {
         this.size = size;
         this.input = input;
     }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getInput() {
+        return input;
+    }
+
+    public void setInput(int input) {
+        this.input = input;
+    }
+    
+    
 
     //Builds the whole horizontal top/mid/bot of the LCD 
     public String segmentMaker(Utility util, String location) {
